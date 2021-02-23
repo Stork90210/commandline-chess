@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'pry'
+
 class Chessboard
   def initialize
     @height = 8
@@ -30,4 +32,14 @@ class Chessboard
     puts ''
     puts '     A    B    C    D    E    F    G    H  '
   end
+
+  def to_chess_notation(array)
+    return nil unless array[0] >= 0 && array[0] <= @height - 1 && array[1] >= 0 && array[1] <= @width - 1
+
+    letter = (array[1] + 97).chr
+    number = @height - array[0]
+    letter + number.to_s
+  end
 end
+
+binding.pry
