@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
+require 'pry'
+require_relative 'piece'
 class Chessboard
   def initialize
     @height = 8
     @width = 8
-    @board = Array.new(@height, Array.new(@width, ' '))
+    # @board = Array.new(@height, Array.new(@width, nil))
+    @board = Array.new(@height) { Array.new(@width) }
   end
 
   def draw
@@ -15,11 +18,11 @@ class Chessboard
       row.each_with_index do |square, index_square|
         if (index_row + index_square).even?
           topline += '█████'
-          middleline += "██#{square}██"
+          middleline += "██#{square ? square.token : '█'}██"
           bottomline += '█████'
         else
           topline += '     '
-          middleline += "  #{square}  "
+          middleline += "  #{square ? square.token : ' '}  "
           bottomline += '     '
         end
       end
@@ -48,4 +51,13 @@ class Chessboard
     col = splitted_string[0].ord - 97
     [row, col]
   end
+
+  def setup_board
+    @board[0][0] = Piece.new('rook', 'black', [0, 0])
+    @board[0][1] = Piece.new('knight', 'black', [0, 1])
+    @board[0][2] = Piece.new('bishop', 'black', [0, 2])
+    @board[0][3] = Piece.new('queen', 'black', [0, 3])
+  end
 end
+
+binding.pry

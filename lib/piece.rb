@@ -2,6 +2,8 @@
 
 require 'pry'
 class Piece
+  attr_reader :token
+
   def initialize(name, color, position)
     @name = name
     @position = position
