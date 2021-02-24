@@ -52,6 +52,7 @@ class Chessboard
   end
 end
 
+
 board = Chessboard.new
 
 binding.pry
