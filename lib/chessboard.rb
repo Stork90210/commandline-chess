@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
-
 class Chessboard
   def initialize
     @height = 8
@@ -51,8 +49,3 @@ class Chessboard
     [row, col]
   end
 end
-
-
-board = Chessboard.new
-
-binding.pry
