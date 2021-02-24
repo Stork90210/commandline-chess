@@ -40,6 +40,18 @@ class Chessboard
     number = @height - array[0]
     letter + number.to_s
   end
+
+  # TODO: Add error catching for invalid strings.
+  def to_array_notation(string)
+    return nil unless string.length == 2
+
+    splitted_string = string.split(//)
+    row = @height - splitted_string[1].to_i
+    col = splitted_string[0].ord - 97
+    [row, col]
+  end
 end
+
+board = Chessboard.new
 
 binding.pry
