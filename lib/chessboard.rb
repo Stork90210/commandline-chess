@@ -52,11 +52,32 @@ class Chessboard
     [row, col]
   end
 
-  def setup_board
+  def set_up
     @board[0][0] = Piece.new('rook', 'black', [0, 0])
     @board[0][1] = Piece.new('knight', 'black', [0, 1])
     @board[0][2] = Piece.new('bishop', 'black', [0, 2])
     @board[0][3] = Piece.new('queen', 'black', [0, 3])
+    @board[0][4] = Piece.new('king', 'black', [0, 4])
+    @board[0][5] = Piece.new('bishop', 'black', [0, 5])
+    @board[0][6] = Piece.new('knight', 'black', [0, 6])
+    @board[0][7] = Piece.new('rook', 'black', [0, 7])
+
+    8.times do |index|
+      @board[1][index] = Piece.new('pawn', 'black', [1, index])
+    end
+
+    @board[7][0] = Piece.new('rook', 'white', [7, 0])
+    @board[7][1] = Piece.new('knight', 'white', [7, 1])
+    @board[7][2] = Piece.new('bishop', 'white', [7, 2])
+    @board[7][3] = Piece.new('queen', 'white', [7, 3])
+    @board[7][4] = Piece.new('king', 'white', [7, 4])
+    @board[7][5] = Piece.new('bishop', 'white', [7, 5])
+    @board[7][6] = Piece.new('knight', 'white', [7, 6])
+    @board[7][7] = Piece.new('rook', 'white', [7, 7])
+
+    8.times do |index|
+      @board[6][index] = Piece.new('pawn', 'white', [1, index])
+    end
   end
 end
 

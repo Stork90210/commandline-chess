@@ -15,10 +15,10 @@ class Piece
   end
 
   def get_token
-    if @color == 'white'
+    if @color == 'black'
       chesspieces = { king: '♔', queen: '♕', rook: '♖', bishop: '♗', knight: '♘', pawn: '♙' }
       chesspieces[@name.to_sym]
-    elsif @color == 'black'
+    elsif @color == 'white'
       chesspieces = { king: '♚', queen: '♛', rook: '♜', bishop: '♝', knight: '♞', pawn: '♟︎' }
       chesspieces[@name.to_sym]
     end
