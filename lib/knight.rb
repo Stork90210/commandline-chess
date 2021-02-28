@@ -1,6 +1,6 @@
 require_relative 'piece'
 
-class Bishop < Piece
+class Knight < Piece
 
   def initialize(name, color, position)
     super
@@ -9,8 +9,8 @@ class Bishop < Piece
 
   def token
     case @color
-    when 'black' then '♗'
-    when 'white' then '♝'
+    when 'black' then '♘'
+    when 'white' then '♞'
     end
   end
 end
